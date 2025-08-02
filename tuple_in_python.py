@@ -29,8 +29,13 @@
 
 
 #byte comparision of list and tuple(conclusion:tuple more effective then list w.r.t size)
-import sys
-mylist=[1,2,3,"s",True]
-mytuple=(1,2,3,"s",True)
-print(sys.getsizeof(mylist),"list size in bytes")
-print(sys.getsizeof(mytuple),"tuple size in bytes")
+# import sys
+# mylist=[1,2,3,"s",True]
+# mytuple=(1,2,3,"s",True)
+# print(sys.getsizeof(mylist),"list size in bytes")
+# print(sys.getsizeof(mytuple),"tuple size in bytes")
+
+#timeit comparision (working with tuple is more efficient then list)
+import timeit
+print(timeit.timeit(stmt="[0,1,2,3,4,5]",number=100000))
+print(timeit.timeit(stmt="(0,1,2,3,4,5)",number=100000))#more efficent way to do it
